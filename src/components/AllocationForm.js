@@ -1,26 +1,26 @@
-import React, { useContext, useState } from 'react';
-import { AppContext } from '../context/AppContext';
+import React, { useContext, useState } from 'react'; //useContest and useState to share state in nested components
+import { AppContext } from '../context/AppContext';  //import AppContext for use
 
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);
+    const { dispatch,remaining  } = useContext(AppContext);  //use dispatch and remaining from context
 
-    const [name, setName] = useState('');
-    const [cost, setCost] = useState('');
-    const [action, setAction] = useState('');
+    const [name, setName] = useState('');  //function setName that updates name
+    const [cost, setCost] = useState(''); //function setCost that updates cost
+    const [action, setAction] = useState('');  //function setAction that updates action
 
-    const submitEvent = () => {
+    const submitEvent = () => {  //compare cost to remaining value; alert if too much money
 
-            if(cost > remaining) {
-                alert("The value cannot exceed remaining funds  £"+remaining);
-                setCost("");
-                return;
-            }
-
-        const expense = {
+        if(cost > remaining) {
+            alert("The value cannot exceed remaining funds  £"+remaining);
+            setCost("");
+            return;
+        }
+        
+        const expense = {  //use name state and turn cost to int
             name: name,
             cost: parseInt(cost),
         };
-        if(action === "Reduce") {
+        if(action === "Reduce") {  //use dispatch to call reducer function from context
             dispatch({
                 type: 'RED_EXPENSE',
                 payload: expense,
@@ -33,7 +33,7 @@ const AllocationForm = (props) => {
             }
     };
 
-    return (
+    return (  //This html returms the bottom portion of the page
         <div>
             <div className='row'>
 
@@ -61,7 +61,7 @@ const AllocationForm = (props) => {
 
                     <input
                         required='required'
-                        type='number'
+                        type='number'  //already forced to be a number
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
@@ -78,4 +78,4 @@ const AllocationForm = (props) => {
     );
 };
 
-export default AllocationForm;
+export default AllocationForm

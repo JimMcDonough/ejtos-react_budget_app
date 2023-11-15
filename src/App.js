@@ -1,4 +1,7 @@
-import React from 'react';
+//import { useState } from 'react'
+//import reactLogo from './assets/react.svg'
+//import viteLogo from '/vite.svg'
+import './App.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,6 +10,7 @@ import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
 import Budget from './components/Budget';
+import Currency from './components/Currency';
 
 //Code to import Budget.js
 
@@ -44,6 +48,12 @@ const App = () => {
                             <ExpenseTotal />
                             </div>
                         }        
+
+                        {
+                            <div className='col-sm'>
+                                <Currency />
+                            </div>
+                        }
                     </div>
                         <h3 className='mt-3'>Allocation</h3>
                             <div className='row '>

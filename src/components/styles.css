@@ -1,0 +1,34 @@
+/* styles.css */
+
+.currencyDiv {
+    background-color: lightgrey;
+    width: 190px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    margin: 0 auto; /* Centers the element horizontally */
+    padding: 10px; /* Adds internal spacing */
+    text-align: center; /* Centers the content inside */
+    display: flex;
+    align-items: center;
+    border-radius: 5px; /* Adjust border-radius for rounded corners */
+}
+
+  .currencyDiv label {
+    background-color: lightgreen;
+    color: white; /* Sets the background of the dropdown */
+    text-align: right;
+    
+  }
+
+.currencyDiv select {
+    background-color: lightgreen;
+    color: white; /* Sets the background of the dropdown */
+   
+    border: none;
+  }
+  
+  .currencyDiv select option:not(:first-child) {
+    background-color: lightgreen; /* Sets the background of the options except the first one */
+    color: black;
+    
+    border: none;
+  }
