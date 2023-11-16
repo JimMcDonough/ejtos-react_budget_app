@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 const Budget = () => {
-    const { budget,expenses } = useContext(AppContext);
+    const { budget,expenses, currency } = useContext(AppContext);
     const [newBudget, setNewBudget] = useState(budget);
     let allocateAlready = expenses.reduce(
         (previousTotal, expense) => {
@@ -38,7 +38,7 @@ const Budget = () => {
 
     return (
     <div className='alert alert-secondary'>
-    <span>Budget: £{budget}</span>
+    <span>Budget:{currency}</span>
     <input type="number" step="10" value={newBudget} onChange={handleBudgetChange} max={20000}></input>
     <span style={scrollIndicatorStyles}>↑↓</span> {/* Indicator arrows with conditional style */}
     </div>

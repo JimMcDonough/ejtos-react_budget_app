@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'; //useContest and useState t
 import { AppContext } from '../context/AppContext';  //import AppContext for use
 
 const AllocationForm = (props) => {
-    const { dispatch,remaining  } = useContext(AppContext);  //use dispatch and remaining from context
+    const { dispatch,remaining,currency  } = useContext(AppContext);  //use dispatch and remaining from context
 
     const [name, setName] = useState('');  //function setName that updates name
     const [cost, setCost] = useState(''); //function setCost that updates cost
@@ -59,14 +59,17 @@ const AllocationForm = (props) => {
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
 
+                  <div className="currencyAllocationGroup" style={{ marginLeft: '2rem' }}>
+                  <label className="currencyAllocationLabel" htmlFor="currencyAllocationLabel">{currency}</label>
+                    </div>
                     <input
                         required='required'
                         type='number'  //already forced to be a number
                         id='cost'
                         value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        style={{  size: 10}}
                         onChange={(event) => setCost(event.target.value)}>
-                        </input>
+                    </input>
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save

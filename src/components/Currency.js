@@ -8,7 +8,8 @@ const Currency = () => {
     //const [newCurrency, setCurrency] = useState('$ Dollar')
     
     const OnSelect = (event) => {
-        let currency = event.target.value;
+        let currency = event.target.value.substring(0,1);
+        //alert(currency)
         dispatch({
             type: 'CHG_CURRENCY',
             payload: currency
