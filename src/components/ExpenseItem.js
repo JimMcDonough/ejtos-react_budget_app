@@ -32,7 +32,7 @@ const ExpenseItem = (props) => {
         };
 
         dispatch({
-            type: 'ADD_EXPENSE',
+            type: 'RED_EXPENSE',
             payload: expense
         });
 
