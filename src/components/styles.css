@@ -9,7 +9,7 @@
     text-align: center; /* Centers the content inside */
     display: flex;
     align-items: center;
-    border-radius: 5px; /* Adjust border-radius for rounded corners */
+    border-radius: 10px; /* Adjust border-radius for rounded corners */
 }
 
   .currencyDiv label {
